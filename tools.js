@@ -1,6 +1,6 @@
 
-
-let createHtmlElement = ( typeElement, objectAttribute = {}, classArray = [], texContent ='' ) =>{
+//DOC : création d'élément d'Html, avec attributs , class et contenu
+let createHtmlElement = ( typeElement, objectAttribute = {}, classArray = [], texContent ='', innerHtml ='' ) =>{
 
     let element = document.createElement(typeElement)
 
@@ -14,23 +14,11 @@ let createHtmlElement = ( typeElement, objectAttribute = {}, classArray = [], te
 
     if( texContent !== '' ){
         element.textContent = texContent
+    }else if( innerHtml !== '' ){
+        element.innerHTML = innerHtml
     }
 
     return element
 
 }
 
-
-let objectAttribute = {
-    'type':'text',
-    'name':'unText',
-    'value':'UneValeur'
-}
-
-let classArray = ['premiereClasse','secondeClasse']
-
-let monElementHtml = createHtmlElement('input',objectAttribute,classArray)
-
-console.log('test',test)
-
-document.querySelector('#testContent').append(test)
